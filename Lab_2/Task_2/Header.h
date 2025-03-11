@@ -6,7 +6,7 @@
 class book
 {
 public:
-
+    // Конструктор класса book, инициализирует поля через методы
     book() {
         setName();
         setPages();
@@ -15,27 +15,32 @@ public:
         std::cout << std::endl;
     };
 
+    // Метод для установки названия книги
     void setName() {
         std::cout << "Введите название книги: ";
         std::getline(std::cin, name);
     };
 
+    // Метод для установки количества страниц
     void setPages() {
         std::cout << "Введите количество страниц в книге: ";
         std::cin >> pages;
     };
 
+    // Метод для установки цены книги и удвоения цены, если название начинается с "Programming"
     void setPrice() {
         std::cout << "Введите стоимость книги: ";
         std::cin >> price;
         doublePrice();
     };
 
+    // Метод для вычисления средней стоимости одной страницы
     void calcPriceOfpage() {
         std::cout << "Средняя стоимость одной страницы: " << price / pages << "p.";
         std::cout << "\n";
     };
 
+    // Метод для удвоения цены, если название книги начинается с "Programming"
     float doublePrice() {
         if (name.size() == 0)
         {
@@ -61,6 +66,7 @@ public:
         return price;
     };
 
+    // Метод для вывода информации о книге
     void printInfo() {
         std::cout << "Название книги: " << name << std::endl;
         std::cout << "Количество страниц: " << pages << std::endl;
@@ -68,15 +74,14 @@ public:
         std::cout << "\n";
     }
 
-
-
+    // Деструктор класса book
     ~book() {
         std::cout << "\n" << "Succsess! * Memory has been cleaned" << "\n";
     };
 
 private:
-    std::string name;
-    float price;
-    int pages;
-    int editValue;
+    std::string name;  // Название книги
+    float price;       // Цена книги
+    int pages;         // Количество страниц
+    int editValue;     // Неиспользуемая переменная
 };
