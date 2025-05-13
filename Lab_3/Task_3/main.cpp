@@ -17,10 +17,7 @@ void filtSymbols(std::string* text, std::string* A_line, std::string* a_line) {
 }
 
 int main() {
-		setlocale(LC_ALL, "ru");
-	// меняем кодировку консоли для возможности рускоязычного ввода
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+	setlocale(LC_ALL, "ru");
 
 	std::string text = "";           // Èñõîäíàÿ ñòðîêà
 	std::string* txt_ptr = &text;    // Óêàçàòåëü íà èñõîäíóþ ñòðîêó
